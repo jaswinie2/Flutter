@@ -1,0 +1,29 @@
+1. What is Flutter?
+Flutter is an open-source UI development framework created by Google. It is used to build applications for Android, iOS, web, and desktop using a single codebase. Flutter provides fast performance because it uses its own rendering engine. Applications developed using Flutter look like native apps. Flutter uses the Dart programming language.
+
+2. What are the key features of Flutter?
+Flutter supports a single codebase for multiple platforms, which reduces development effort. It provides a hot reload feature that allows developers to see changes instantly. Flutter offers rich and customizable widgets for UI design. It supports both Material Design and Cupertino styles. Flutter delivers high performance with smooth animations.
+
+3. What is Dart and why is it used in Flutter?
+Dart is a programming language developed by Google and is used in Flutter app development. It is object-oriented and easy to learn. Dart provides fast execution and supports just-in-time compilation. It works efficiently with Flutter’s hot reload feature. Dart helps in building smooth and responsive user interfaces.
+
+4. What are the advantages of using Flutter?
+Flutter allows developers to write one codebase for multiple platforms. It reduces development time and cost. Flutter provides near-native performance. The hot reload feature improves productivity. It is open-source and has strong community support.
+
+5. What is Android Studio, and how is it used in Flutter?
+Android Studio is an integrated development environment (IDE) for Android and Flutter development. It is used to write, edit, and manage Flutter code. Android Studio supports Flutter and Dart plugins. It provides tools such as emulators and debuggers. Developers use it to build and run Flutter applications.
+
+6. How do you install Flutter and test its setup?
+Flutter is installed by downloading the Flutter SDK from the official website. The SDK path is added to system environment variables. Android Studio and Flutter plugins are installed. The setup is tested by running the flutter doctor command. This command checks whether all required tools are properly installed.
+
+7. What is the difference between Flutter and React Native?
+Flutter uses the Dart programming language, while React Native uses JavaScript. Flutter has its own rendering engine for UI. React Native relies on native components. Flutter generally offers better performance. Flutter provides a more consistent UI across platforms.
+
+8. What are the differences between web applications and mobile applications?
+Web applications run in a web browser and do not require installation. Mobile applications are installed on smartphones. Web apps mostly depend on an internet connection. Mobile apps can access device features like camera and GPS. Mobile apps usually offer better performance and user experience.
+
+9. What is the purpose of a simulator and emulator for Flutter?
+A simulator or emulator is used to test Flutter applications. It behaves like a real mobile device. Developers can run apps without using a physical phone. It helps in checking UI layout and functionality. It speeds up development and testing.
+
+10. Which tools are commonly used in the Flutter development environment?
+The Flutter SDK is the main tool for Flutter development. Dart SDK is used for programming. Android Studio or Visual Studio Code is used as an IDE. Emulators or simulators are used for testing apps. Git is commonly used for version control.
