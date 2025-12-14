@@ -1,0 +1,95 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: const ResponsiveExample(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class ResponsiveExample extends StatelessWidget {
+  const ResponsiveExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Check orientation
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+
+    return Scaffold(
+      appBar: AppBar(title: const Text("Simple Responsive UI")),
+      body: isPortrait
+          ? Column(
+              children: [
+                Expanded(child: Container(color: Colors.blue, child: const Center(child: Text("Top Section")))),
+                Expanded(child: Container(color: Colors.green, child: const Center(child: Text("Bottom Section")))),
+              ],
+            )
+          : Row(
+              children: [
+                Expanded(child: Container(color: Colors.blue, child: const Center(child: Text("Left Section")))),
+                Expanded(child: Container(color: Colors.green, child: const Center(child: Text("Right Section")))),
+              ],
+            ),
+    );
+  }
+}
+
+
+Use MediaQuery and layout breakpoints to implement responsiveness.
+************************************************************
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ResponsiveExample(),
+    );
+  }
+}
+
+class ResponsiveExample extends StatelessWidget {
+  const ResponsiveExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    // breakpoint: <600 = mobile, >=600 = tablet/desktop
+    final isMobile = screenWidth < 600;
+
+    return Scaffold(
+      appBar: AppBar(title: const Text("Simple Responsive UI")),
+      body: isMobile
+          ? Column(
+              children: [
+                Expanded(child: Container(color: Colors.blue, child: const Center(child: Text("Mobile - Top")))),
+                Expanded(child: Container(color: Colors.green, child: const Center(child: Text("Mobile - Bottom")))),
+              ],
+            )
+          : Row(
+              children: [
+                Expanded(child: Container(color: Colors.blue, child: const Center(child: Text("Tablet/Desktop - Left")))),
+                Expanded(child: Container(color: Colors.green, child: const Center(child: Text("Tablet/Desktop - Right")))),
+              ],
+            ),
+    );
+  }
+}
