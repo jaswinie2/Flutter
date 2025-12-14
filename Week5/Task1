@@ -1,0 +1,8 @@
+1. How to run and view your Flutter app on an emulator and a physical mobile device
+To run a Flutter app on an emulator, open Android Studio and start an Android Virtual Device (AVD). Connect the emulator and run the command flutter run in the project folder. To run the app on a physical device, enable Developer Options and USB Debugging on the mobile phone. Connect the phone to the computer using a USB cable. Run flutter run and the app will appear on the device screen.
+
+2. How to build and generate an APK file from your Flutter app
+First, open the Flutter project in the terminal or Android Studio. Make sure the project has no errors by running flutter doctor. Use the command flutter build apk to generate the APK file. After the build completes, the APK is created in the build/app/outputs/flutter-apk folder. This APK can be installed on Android devices.
+
+3. How to install your APK on a mobile device and publish it on the Google Play Store
+To install the APK, transfer it to the mobile device and enable Install from Unknown Sources. Tap the APK file to install the app on the phone. To publish the app on Google Play Store, create a Google Play Developer account. Upload the APK or App Bundle in the Play Console. Fill in app details, screenshots, and submit the app for review.
