@@ -1,0 +1,85 @@
+Step 1: Add dependency in pubspec.yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  
+http: ^1.2.0  # (Check latest version on pub.dev)         //  add @ 42 line
+
+
+Step 2: Example Code — lib/main.dart
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String message = "Loading...";
+
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
+  Future<void> fetchData() async {
+    final url = Uri.parse('https://jsonplaceholder.typicode.com/posts/1');
+
+    try {
+      final response = await http.get(
+        url,
+        headers: {
+          'User-Agent': 'Mozilla/5.0', // ✅ Add this header
+          'Accept': 'application/json',
+        },
+      );
+
+      if (response.statusCode == 200) {
+        final jsonData = jsonDecode(response.body);
+        setState(() {
+          message = "Title: ${jsonData['title']}";
+        });
+      } else {
+        setState(() {
+          message = "Error: ${response.statusCode}";
+        });
+      }
+    } catch (e) {
+      setState(() {
+        message = "Failed to load data: $e";
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('HTTP Example')),
+      body: Center(child: Text(message, textAlign: TextAlign.center)),
+    );
+  }
+}
+
+
+
+urls :
+https://images.dog.ceo/breeds/husky/n02110185_1469.jpg
+https://dummyjson.com/products/1
+https://zenquotes.io/api/random
