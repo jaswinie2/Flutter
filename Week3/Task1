@@ -1,0 +1,121 @@
+Here's a clear and updated guide to install Android Studio in Ubuntu:
+
+✅ Method 1: Install via Snap (Recommended for Beginners)
+This is the simplest method.
+🔹 Step 1: Open Terminal (Ctrl + Alt + T)
+🔹 Step 2: Run this command:
+
+sudo snap install android-studio --classic
+✅ This will automatically download and install the latest Android Studio.
+
+✅ Method 2: Manual Installation from Official Site
+🔹 Step 1: Install Java (Required)
+
+sudo apt update
+sudo apt install openjdk-17-jdk
+🔹 Step 2: Download Android Studio
+Go to:
+📎 https://developer.android.com/studio
+Download the Linux .tar.gz file.
+Or use terminal:
+
+
+wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.2.1.21/android-studio-2023.2.1.21-linux.tar.gz
+🔹 Step 3: Extract the file
+
+tar -xvzf android-studio-*.tar.gz
+🔹 Step 4: Move to /opt
+
+sudo mv android-studio /opt/
+🔹 Step 5: Launch Android Studio
+
+/opt/android-studio/bin/studio.sh
+✅ Follow the setup wizard (Install SDK, configure emulator, etc.)
+
+✅ (Optional) Create Desktop Shortcut
+To launch it from the app menu:
+
+sudo nano /usr/share/applications/android-studio.desktop
+Paste:
+ini
+CopyEdit
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Android Studio
+Exec=/opt/android-studio/bin/studio.sh
+Icon=/opt/android-studio/bin/studio.png
+Categories=Development;IDE;
+Terminal=false
+Save and exit. Then:
+
+chmod +x /usr/share/applications/android-studio.desktop
+
+✅ Verify Installation
+You can now open Android Studio from the Application menu or by running:
+
+android-studio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To create and run Dart programs in Android Studio on Ubuntu, follow this clear step-by-step guide:
+
+✅ Step 1: Install Dart Plugin in Android Studio
+1.	Open Android Studio.
+2.	Go to Settings or Preferences:
+•	Linux/Ubuntu: File > Settings
+•	Or use shortcut: Ctrl + Alt + S
+3.	Navigate to: Plugins
+4.	Search for Dart in the Marketplace.
+5.	Click Install.
+6.	Also install Flutter plugin if you plan to use Flutter.
+7.	Restart Android Studio after installation.
+
+✅ Step 2: Create a Dart Project
+1.	On the Android Studio welcome screen, click:
+“New Project” > “Dart” (If Flutter is installed, choose "New Flutter Project")
+2.	Choose:
+•	Dart Console Application
+3.	Specify the project location.
+4.	Set Dart SDK path:
+•	If not installed, Android Studio may prompt to download the Dart SDK.
+•	Or you can manually install Dart using:
+
+sudo apt update
+sudo apt install apt-transport-https
+sudo sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
+sudo sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
+sudo apt update
+sudo apt install dart
+
+✅ Step 4: Write and Run Dart Program
+Example Dart Program:
+
+void main() {
+  print("Hello, Dart!");
+}
+To run:
+•	Click the green play ▶️ button in Android Studio, or
+•	Open terminal and run:
+
+dart run
+
+✅ Step 5: (Optional) Run Dart in Terminal
+To check Dart installation:
+
+dart --version
+Run any .dart file directly:
+dart hello.dart
+
