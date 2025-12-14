@@ -1,0 +1,186 @@
+a) Install Flutter SDK and Dart SDK on your system
+
+Step 1: System Requirements
+•	OS: Windows 10/11, macOS, or Linux.
+•	Disk space: 1.64 GB (does not include IDE/tools).
+•	Tools: Git must be installed.
+
+Step 2: Download and Install Flutter
+1.	Go to the official site: https://flutter.dev/docs/get-started/install
+2.	Choose your OS (Windows/macOS/Linux).
+3.	Download the Flutter SDK.
+4.	Extract the zip file to a suitable location (e.g., C:\flutter).
+5.	Add the Flutter bin directory to your system PATH.
+
+Update your Windows PATH variable
+
+To run Flutter commands in PowerShell, add Flutter to the PATH environment variable. This section presumes that you installed the Flutter SDK in %USERPROFILE%\dev\flutter.
+1.	Press Windows + Pause.
+If your keyboard lacks a Pause key, try Windows + Fn + B.
+The System > About dialog displays.
+2.	Click Advanced System Settings > Advanced > Environment Variables...
+The Environment Variables dialog displays.
+3.	In the User variables for (username) section, look for the Path entry.
+1.	If the entry exists, double-click on it.
+The Edit Environment Variable dialog displays.
+1.	Double-click in an empty row.
+2.	Type %USERPROFILE%\dev\flutter\bin.
+3.	Click the %USERPROFILE%\dev\flutter\bin entry.
+4.	Click Move Up until the Flutter entry sits at the top of the list.
+5.	Click OK three times.
+2.	If the entry doesn't exist, click New....
+The Edit Environment Variable dialog displays.
+1.	In the Variable Name box, type Path.
+2.	In the Variable Value box, type %USERPROFILE%\dev\flutter\bin
+3.	Click OK three times.
+4.	To enable these changes, close and reopen any existing command prompts and PowerShell instances.
+
+Check your development setup
+Run Flutter doctor
+The flutter doctor command validates that all components of a complete Flutter development environment for Windows.
+1.	Open PowerShell.
+2.	To verify your installation of all the components, run the following command.
+PS C:> flutter doctor
+content_copy
+As you chose to develop for desktop, you do not need all components. If you followed this guide, the command should output [✓] for the tooling and platforms you set up.
+Troubleshoot Flutter doctor issues
+#
+When the flutter doctor command returns an error, it could be for Flutter, VS Code, Visual Studio, the connected device, or network resources.
+If the flutter doctor command returns an error for any of these components, run it again with the verbose flag.
+PS C:> flutter doctor -v
+
+
+✅ Method 1: Using Command Line (Terminal)
+Step 1: Install Dart (if not using Flutter)
+•	Download from: https://dart.dev/get-dart
+Note: If Flutter is installed, Dart is already included.
+Step 2: Create and Run Dart Program
+1.	Open terminal or command prompt.
+2.	Create a file, e.g., hello.dart:
+dart
+CopyEdit
+void main() {
+  print('Hello, Dart!');
+}
+3.	Run the file:
+bash
+CopyEdit
+dart hello.dart
+
+Method 2: Using Visual Studio Code (Recommended)
+Step-by-step:
+1.	Install Visual Studio Code
+2.	Install Dart and Flutter extensions:
+o	Go to Extensions tab → Search for Dart and Flutter → Click Install
+3.	Create a Dart file:
+o	File → New File → Save as main.dart
+4.	Write your Dart code.
+5.	To run:
+o	Open terminal in VS Code (Ctrl+~)
+o	Run: dart main.dart
+void main() {
+  // Variables and Data Types
+  int age = 25;
+  double height = 5.9;
+  String name = 'Ramesh';
+  bool isStudent = true;
+
+  print('Name: $name');
+  print('Age: $age');
+  print('Height: $height');
+  print('Is a student: $isStudent');
+
+  // Control Structure: if-else
+  if (age > 18) {
+    print('$name is an adult.');
+  } else {
+    print('$name is a minor.');
+  }
+
+  // Loops: for loop
+  print('Counting from 1 to 5:');
+  for (int i = 1; i <= 5; i++) {
+    print(i);
+  }
+
+  // Functions
+  greet(name);
+}
+
+// Function definition
+void greet(String personName) {
+  print('Hello, $personName! Welcome to Dart.');
+}
+
+Linux Operating System
+*******************
+✅ Step 1: System Requirements
+•	OS: Ubuntu 20.04 or later (64-bit)
+•	Disk Space: 2.8 GB (excluding IDE/tools)
+•	Tools: bash, curl, git, unzip, xz-utils, libglu1-mesa
+
+✅ Step 2: Install Required Dependencies
+Open a terminal and run:
+sudo apt update
+sudo apt install curl git unzip xz-utils zip libglu1-mesa -y
+
+✅ Step 3: Download the Flutter SDK
+Download the stable Flutter release:
+cd ~
+curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.22.0-stable.tar.xz
+tar xf flutter_linux_3.22.0-stable.tar.xz
+
+✅ Step 4: Add Flutter to PATH
+Add the Flutter tool to your PATH by editing .bashrc or .zshrc:
+echo 'export PATH="$HOME/flutter/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+If using Zsh:
+echo 'export PATH="$HOME/flutter/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+
+✅ Step 5: Run Flutter Doctor
+Check your environment setup:
+flutter doctor
+
+Create and Run Dart Program
+Open terminal or command prompt.
+Create a file, e.g., hello.dart:
+
+void main() {
+  print('Hello, Dart!');
+}
+Run the file:
+dart hello.dart
+
+void main() {
+  // Variables and Data Types
+  int age = 25;
+  double height = 5.9;
+  String name = 'Ramesh';
+  bool isStudent = true;
+
+  print('Name: $name');
+  print('Age: $age');
+  print('Height: $height');
+  print('Is a student: $isStudent');
+  // Control Structure: if-else
+  if (age > 18) {
+    print('$name is an adult.');
+  } else {
+    print('$name is a minor.');
+  }
+  // Loops: for loop
+  print('Counting from 1 to 5:');
+  for (int i = 1; i <= 5; i++) {
+    print(i);
+  }
+  // Functions
+  greet(name);
+}
+
+// Function definition
+void greet(String personName) {
+  print('Hello, $personName! Welcome to Dart.');
+}
+
+
