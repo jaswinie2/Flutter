@@ -1,0 +1,156 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int currentIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Flutter All Widgets Demo"),
+        centerTitle: true,
+      ),
+
+      // ---------- BODY ----------
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+
+          // TEXT + ICON
+          const Row(
+            children: [
+              Icon(Icons.flutter_dash, color: Colors.blue),
+              SizedBox(width: 10),
+              Text(
+                "Welcome Jaswini",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 15),
+
+          // TEXTFIELD
+          const TextField(
+            decoration: InputDecoration(
+              labelText: "Enter Email",
+              border: OutlineInputBorder(),
+            ),
+          ),
+
+          const SizedBox(height: 10),
+
+          // BUTTON
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Submit"),
+          ),
+
+          const SizedBox(height: 20),
+
+          // CARD + AVATAR + ROW + COLUMN
+          Card(
+            elevation: 4,
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Row(
+                children: [
+                  const CircleAvatar(
+                    radius: 30,
+                    child: Text("J"),
+                  ),
+                  const SizedBox(width: 15),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        "Jaswini",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      Text("jaswini@gmail.com"),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 20),
+
+          // GRIDVIEW
+          SizedBox(
+            height: 150,
+            child: GridView.count(
+              crossAxisCount: 3,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
+              children: const [
+                Icon(Icons.home, size: 40),
+                Icon(Icons.person, size: 40),
+                Icon(Icons.settings, size: 40),
+                Icon(Icons.phone, size: 40),
+                Icon(Icons.camera, size: 40),
+                Icon(Icons.map, size: 40),
+              ],
+            ),
+          ),
+
+          const SizedBox(height: 20),
+
+          // LISTTILE
+          const ListTile(
+            leading: Icon(Icons.info),
+            title: Text("Flutter Widgets"),
+            subtitle: Text("Demo Application"),
+            trailing: Icon(Icons.arrow_forward),
+          ),
+        ],
+      ),
+
+      // ---------- BOTTOM NAVIGATION ----------
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: "Likes",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Profile",
+          ),
+        ],
+      ),
+    );
+  }
+}
